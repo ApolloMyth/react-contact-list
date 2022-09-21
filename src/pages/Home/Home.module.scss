@@ -1,0 +1,20 @@
+.home {
+  width: 100vw;
+  padding: 1rem 3rem;
+  .contacts{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    padding: 1rem 2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .home {
+    padding: 1rem;
+  }
+}

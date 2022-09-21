@@ -1,0 +1,30 @@
+.addAPhoto {
+  height: 100%;
+  .button {
+    height: 100%;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    line-height: 22px;
+    transition: var(--transition);
+    &:hover {
+      background-color: var(--color-primary-variant);
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .addAPhoto {
+    .button {
+      padding: 0 0.7rem;
+      font-size: 0.8rem;
+    }
+  }
+}
