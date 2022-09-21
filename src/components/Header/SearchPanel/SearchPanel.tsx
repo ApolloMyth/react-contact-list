@@ -14,7 +14,6 @@ const SearchPanel = () => {
   useEffect(() => {
     onSetSearch("");
   }, []);
-  console.log(search);
   return (
     <div className={styles.searchContainer}>
       <div className={styles.searchPanel}>
