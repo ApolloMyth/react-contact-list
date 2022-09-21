@@ -15,7 +15,7 @@
     git clone https://github.com/anysofronova/takeoff-staff-test-task.git
     cd takeoff-staff-test-task/
     npm install
-    npm run
+    npm run start
 
 **Demo:** https://anysofronova.github.io/takeoff-staff-test-task/#/login
 <div><img src="https://i.postimg.cc/Y0403RJP/2022-09-21-14-37-56.png"></div>  
