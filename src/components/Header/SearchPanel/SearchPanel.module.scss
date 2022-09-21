@@ -1,0 +1,50 @@
+.searchContainer {
+  max-width: 15rem;
+  width: 100%;
+  .searchPanel {
+    display: flex;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border: 1px solid var(--color-grey);
+    filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
+    .icon {
+      min-width: 20px;
+      height: 20px;
+      color: var(--color-grey);
+      &.close {
+        visibility: hidden;
+        cursor: pointer;
+        &.active {
+          visibility: visible;
+        }
+      }
+    }
+    input {
+      font-weight: 300;
+      flex: 1;
+      padding: 0 0.5rem;
+      &::placeholder {
+        font-weight: 400;
+        color: var(--color-grey);
+        line-height: 19px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .searchContainer {
+    .searchPanel {
+      padding: 0.3rem 0.3rem;
+      .icon {
+        min-width: 15px;
+        height: 15px;
+      }
+      input {
+        padding: 0 0.2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.contact {
+  display: grid;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-grey);
+  border-radius: 10px;
+  grid-template-columns: repeat(3, 1fr) max-content;
+  cursor: pointer;
+  gap: 0.5rem;
+  & > div {
+    word-wrap: anywhere;
+  }
+  &:hover {
+    color: var(--color-primary-variant);
+  }
+  .buttons {
+    justify-self: flex-end;
+    button {
+      &:hover {
+        color: var(--color-primary-variant2);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact {
+    grid-template-columns: 1fr max-content;
+    .name {
+      order: 1;
+    }
+    .buttons {
+      order: 2;
+    }
+    .phone {
+      order: 3;
+      grid-column: 1/2;
+    }
+    .email {
+      order: 4;
+      grid-column: 1/2;
+    }
+  }
+}
