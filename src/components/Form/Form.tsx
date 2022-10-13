@@ -57,12 +57,12 @@ const Form: FC<IForm> = ({
           {error && <p>Wrong Email or Password</p>}
         </div>
         {isSignUp ? (
-          <div>
+          <div className={styles.links}>
             <div>Already have an account?</div>
             <Link to={"/login"}>Log In</Link>
           </div>
         ) : (
-          <div>
+          <div className={styles.links}>
             <div>Dont have an account yet?</div>
             <Link to={"/register"}>Create one</Link>
           </div>

@@ -1,6 +1,6 @@
 .loader {
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   left: 0;
   bottom: 0;
@@ -22,8 +22,8 @@
     margin-left: -1.75em;
     margin-top: -1.75em;
     animation: spin 2s linear infinite;
-    border-top-color: var(--color-primary-variant);
-    border-right-color: var(--color-primary-variant);
+    border-top-color: var(--color-orange);
+    border-right-color: var(--color-orange);
   }
 
   .middle {
@@ -32,8 +32,8 @@
     margin-left: -1.05em;
     margin-top: -1.05em;
     animation: spin 1.75s linear reverse infinite;
-    border-top-color: var(--color-primary);
-    border-right-color: var(--color-primary);
+    border-top-color: var(--color-grey);
+    border-right-color: var(--color-grey);
   }
 
   .inner {
@@ -42,8 +42,8 @@
     margin-left: -0.4em;
     margin-top: -0.4em;
     animation: spin 1.5s linear infinite;
-    border-top-color: var(--color-primary-variant);
-    border-right-color: var(--color-primary-variant);
+    border-top-color: var(--color-orange);
+    border-right-color: var(--color-orange);
   }
 }
 

@@ -2,11 +2,12 @@
   display: flex;
   max-width: 700px;
   width: 90%;
-  margin: 0 auto;
   background-color: var(--color-grey);
   border-radius: 10px;
   justify-content: center;
   align-content: center;
+  color: var(--color-bg);
+  margin: 2rem auto 0;
   .form {
     display: flex;
     align-items: center;
@@ -18,8 +19,8 @@
     gap: 1rem;
     width: 100%;
     a {
-      color: var(--color-primary-variant2);
       transition: var(--transition);
+      color: var(--color-orange);
       &:hover {
         color: var(--color-bg);
       }
@@ -32,17 +33,20 @@
       padding-bottom: 1rem;
     }
     input {
-      background-color: var(--color-light);
       border: none;
       padding: 0.7rem 1rem;
       width: 100%;
       border-radius: 5px;
     }
     .errors {
-      color: var(--color-primary-variant);
+      color: var(--color-primary);
       p {
         margin: 0;
       }
+    }
+    .links {
+      display: flex;
+      gap: 1rem;
     }
   }
 }

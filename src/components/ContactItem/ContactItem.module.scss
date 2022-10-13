@@ -11,13 +11,13 @@
     word-wrap: anywhere;
   }
   &:hover {
-    color: var(--color-primary-variant);
+    color: var(--color-orange);
   }
   .buttons {
     justify-self: flex-end;
     button {
       &:hover {
-        color: var(--color-primary-variant2);
+        color: var(--color-orange);
       }
     }
   }
