@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <Link to={"/home"}>
       <div className={styles.logo}>
-        <h1>Test Task</h1>
+        <h1>Contact list</h1>
       </div>
     </Link>
   );

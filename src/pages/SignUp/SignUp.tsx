@@ -26,7 +26,7 @@ const SignUp = () => {
   };
   return (
     <Form
-      title={"Create Account"}
+      title={"Create Your Account"}
       isSignUp={true}
       buttonText={"Sign Up"}
       singInAndUp={signUp}
