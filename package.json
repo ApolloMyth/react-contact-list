@@ -1,8 +1,8 @@
 {
-  "name": "react-takeoff",
+  "name": "contact-list",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://anysofronova.github.io/takeoff-staff-test-task",
+  "homepage": "https://anysofronova.github.io/contact-list",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
     "@styled-icons/boxicons-logos": "^10.38.0",
