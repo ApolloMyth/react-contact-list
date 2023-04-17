@@ -1,10 +1,11 @@
-import styles from "./Form.module.scss";
 import { FC } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { IForm, InputsType } from "../../@types/IForm";
 import { Link } from "react-router-dom";
+import { SubmitHandler, useForm } from "react-hook-form";
 
-const Form: FC<IForm> = ({
+import styles from "./Form.module.scss";
+import { IForm, InputsType } from "../../@types";
+
+export const Form: FC<IForm> = ({
   title,
   isSignUp,
   buttonText,
@@ -54,7 +55,12 @@ const Form: FC<IForm> = ({
             errors?.password?.type === "required") && (
             <p>The fields are required</p>
           )}
-          {error && <p>Wrong Email or Password</p>}
+          {error === "Firebase: Error (auth/email-already-in-use)." && (
+            <p>That email address is already in use</p>
+          )}
+          {error === "Firebase: Error (auth/wrong-password)." && (
+            <p>Wrong Email or Password</p>
+          )}
         </div>
         {isSignUp ? (
           <div className={styles.links}>
@@ -63,7 +69,7 @@ const Form: FC<IForm> = ({
           </div>
         ) : (
           <div className={styles.links}>
-            <div>Dont have an account yet?</div>
+            <div>Don't have an account yet?</div>
             <Link to={"/register"}>Create one</Link>
           </div>
         )}
@@ -71,5 +77,3 @@ const Form: FC<IForm> = ({
     </div>
   );
 };
-
-export default Form;

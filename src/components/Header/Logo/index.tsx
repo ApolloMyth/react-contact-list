@@ -1,7 +1,8 @@
-import styles from "./Logo.module.scss";
 import { Link } from "react-router-dom";
 
-const Logo = () => {
+import styles from "./Logo.module.scss";
+
+export const Logo = () => {
   return (
     <Link to={"/home"}>
       <div className={styles.logo}>
@@ -10,5 +11,3 @@ const Logo = () => {
     </Link>
   );
 };
-
-export default Logo;

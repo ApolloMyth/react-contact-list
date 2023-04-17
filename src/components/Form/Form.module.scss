@@ -2,11 +2,11 @@
   display: flex;
   max-width: 700px;
   width: 90%;
-  background-color: var(--color-grey);
+  border: 1px solid var(--color-grey);
   border-radius: 10px;
   justify-content: center;
   align-content: center;
-  color: var(--color-bg);
+  color: var(--color-text);
   margin: 2rem auto 0;
   .form {
     display: flex;
@@ -22,7 +22,7 @@
       transition: var(--transition);
       color: var(--color-orange);
       &:hover {
-        color: var(--color-bg);
+        color: var(--color-primary);
       }
     }
     h2 {
@@ -33,7 +33,7 @@
       padding-bottom: 1rem;
     }
     input {
-      border: none;
+      border: 1px solid var(--color-grey);
       padding: 0.7rem 1rem;
       width: 100%;
       border-radius: 5px;

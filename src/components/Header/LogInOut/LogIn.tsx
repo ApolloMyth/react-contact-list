@@ -1,7 +1,7 @@
-import { LogIn as LogInIcon } from "@styled-icons/ionicons-outline";
 import { Link } from "react-router-dom";
+import { LogIn as LogInIcon } from "@styled-icons/evaicons-solid";
 
-const LogIn = () => {
+export const LogIn = () => {
   return (
     <Link to={"/login"}>
       <div className={"logInOut"}>
@@ -11,5 +11,3 @@ const LogIn = () => {
     </Link>
   );
 };
-
-export default LogIn;

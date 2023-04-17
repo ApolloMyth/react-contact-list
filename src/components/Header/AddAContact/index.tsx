@@ -1,8 +1,9 @@
 import { FC, useState } from "react";
-import styles from "./AddAContact.module.scss";
-import ModalAddContact from "../ModalAddContact/ModalAddContact";
 
-const AddAContact: FC = () => {
+import styles from "./AddAContact.module.scss";
+import { ModalAddContact } from "../ModalAddContact";
+
+export const AddAContact: FC = () => {
   const [modal, setModal] = useState<boolean>(false);
   return (
     <div className={styles.addAPhoto}>
@@ -15,5 +16,3 @@ const AddAContact: FC = () => {
     </div>
   );
 };
-
-export default AddAContact;

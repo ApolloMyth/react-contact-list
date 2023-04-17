@@ -1,11 +1,12 @@
-import styles from "./ModalAddContact.module.scss";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { FC } from "react";
+import { FC, useState } from "react";
 import clsx from "clsx";
-import { useAppDispatch } from "../../../hooks/redux";
-import { Contact } from "../../../@types/IContacts";
-import { v4 as uuidv4 } from "uuid";
-import { addContact, changeContact } from "../../../redux/slices/contactsSlice";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
+
+import { db } from "../../../firebase";
+import { Contact } from "../../../@types";
+import styles from "./ModalAddContact.module.scss";
+import { useAppSelector } from "../../../hooks";
 
 type ModalAddType = {
   title: string;
@@ -13,7 +14,11 @@ type ModalAddType = {
   setModal: (mode: boolean) => void;
 };
 
-const ModalAddContact: FC<ModalAddType> = ({ title, contact, setModal }) => {
+export const ModalAddContact: FC<ModalAddType> = ({
+  title,
+  contact,
+  setModal,
+}) => {
   const {
     register,
     handleSubmit,
@@ -25,14 +30,22 @@ const ModalAddContact: FC<ModalAddType> = ({ title, contact, setModal }) => {
       email: contact?.email || "",
     },
   });
-  const dispatch = useAppDispatch();
-  const onAddAContact: SubmitHandler<Contact> = (contactFields) => {
+  const { uid } = useAppSelector((state) => state.authSlice);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const onAddAContact: SubmitHandler<Contact> = async (contactFields) => {
+    setIsLoading(true);
     if (contact) {
-      dispatch(changeContact({ ...contactFields, id: contact.id }));
+      await updateDoc(doc(db, `users/${uid}/contacts/${contact.id}`), {
+        ...contactFields,
+      });
     } else {
-      dispatch(addContact({ ...contactFields, id: uuidv4() }));
+      await addDoc(collection(db, `users/${uid}/contacts`), {
+        ...contactFields,
+      });
     }
     setModal(false);
+    setIsLoading(false);
   };
 
   return (
@@ -82,7 +95,9 @@ const ModalAddContact: FC<ModalAddType> = ({ title, contact, setModal }) => {
           >
             Cancel
           </button>
-          <button className={"button"}>{contact ? "Change" : "Add"}</button>
+          <button className={"button"} disabled={isLoading}>
+            {contact ? "Change" : "Add"}
+          </button>
         </div>
 
         <div className={styles.errors}>
@@ -105,5 +120,3 @@ const ModalAddContact: FC<ModalAddType> = ({ title, contact, setModal }) => {
     </div>
   );
 };
-
-export default ModalAddContact;

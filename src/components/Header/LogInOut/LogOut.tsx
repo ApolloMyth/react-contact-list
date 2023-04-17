@@ -1,10 +1,12 @@
-import { LogOut as LogOutIcon } from "@styled-icons/ionicons-outline";
-import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../../hooks/redux";
-import { removeUser } from "../../../redux/slices/authSlice";
+import { getAuth, signOut } from "firebase/auth";
+import { LogOut as LogOutIcon } from "@styled-icons/evaicons-solid";
 
-const LogOut = () => {
+import { useAppDispatch } from "../../../hooks";
+import { removeUser } from "../../../redux/slices/authSlice";
+import { removeContacts } from "../../../redux/slices/contactsSlice";
+
+export const LogOut = () => {
   const auth = getAuth();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -13,6 +15,7 @@ const LogOut = () => {
       .then(() => navigate("/login"))
       .catch((error) => alert(error));
     dispatch(removeUser());
+    dispatch(removeContacts());
   };
   return (
     <div className={"logInOut"} onClick={() => onLogOut()}>
@@ -21,5 +24,3 @@ const LogOut = () => {
     </div>
   );
 };
-
-export default LogOut;

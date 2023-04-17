@@ -1,6 +1,6 @@
 import styles from "./Loader.module.scss";
 
-const Loader = () => {
+export const Loader = () => {
   return (
     <div className={styles.loader}>
       <div className={styles.outer} />
@@ -9,5 +9,3 @@ const Loader = () => {
     </div>
   );
 };
-
-export default Loader;

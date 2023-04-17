@@ -1,14 +1,14 @@
-import styles from "./Header.module.scss";
-import Logo from "./Logo/Logo";
-import SearchPanel from "./SearchPanel/SearchPanel";
-import { useAuth } from "../../hooks/useAuth";
-import AddAContact from "./AddAContact/AddAContact";
-import LogOut from "./LogInOut/LogOut";
-import LogIn from "./LogInOut/LogIn";
-import { useLocation } from "react-router-dom";
 import clsx from "clsx";
+import { useLocation } from "react-router-dom";
 
-const Header = () => {
+import { Logo } from "./Logo";
+import { useAuth } from "../../hooks";
+import styles from "./Header.module.scss";
+import { LogIn, LogOut } from "./LogInOut";
+import { AddAContact } from "./AddAContact";
+import { SearchPanel } from "./SearchPanel";
+
+export const Header = () => {
   const auth = useAuth();
   const { pathname } = useLocation();
   return (
@@ -37,5 +37,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

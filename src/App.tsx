@@ -1,20 +1,21 @@
-import { Routes, Route } from "react-router-dom";
-import MainLayout from "./layouts/MainLayout";
 import { FC, lazy, Suspense } from "react";
-import Loader from "./components/UI/Loader/Loader";
-import Home from "./pages/Home/Home";
+import { Routes, Route } from "react-router-dom";
 
-const SignUp = lazy(
-  () => import(/* webpackChunkName: "SignUp" */ "./pages/SignUp/SignUp")
+import { Home } from "./pages";
+import { Loader } from "./components";
+import { MainLayout } from "./layouts";
+
+const SignIn = lazy(() =>
+  import("./pages").then((module) => ({ default: module.SignIn }))
 );
-const SignIn = lazy(
-  () => import(/* webpackChunkName: "SignUp" */ "./pages/SignIn/SignIn")
+const SignUp = lazy(() =>
+  import("./pages").then((module) => ({ default: module.SignUp }))
 );
-const NotFound = lazy(
-  () => import(/* webpackChunkName: "NotFound" */ "./pages/NotFound/NotFound")
+const NotFound = lazy(() =>
+  import("./pages").then((module) => ({ default: module.NotFound }))
 );
 
-const App: FC = () => {
+export const App: FC = () => {
   return (
     <Routes>
       <Route path={"/"} element={<MainLayout />}>
@@ -49,5 +50,3 @@ const App: FC = () => {
     </Routes>
   );
 };
-
-export default App;

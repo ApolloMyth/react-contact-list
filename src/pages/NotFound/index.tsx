@@ -2,7 +2,7 @@ import styles from "./NotFound.module.scss";
 import { Link } from "react-router-dom";
 import { FC } from "react";
 
-const NotFound: FC = () => {
+export const NotFound: FC = () => {
   return (
     <div className={styles.notFound}>
       <div className={styles.face}>
@@ -23,5 +23,3 @@ const NotFound: FC = () => {
     </div>
   );
 };
-
-export default NotFound;

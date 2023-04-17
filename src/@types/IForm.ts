@@ -8,5 +8,5 @@ export interface IForm {
   isSignUp: boolean;
   buttonText: string;
   singInAndUp: (params: InputsType) => void;
-  error?: boolean;
+  error?: string;
 }

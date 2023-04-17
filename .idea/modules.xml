@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/react-takeoff.iml" filepath="$PROJECT_DIR$/.idea/react-takeoff.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/contact-list.iml" filepath="$PROJECT_DIR$/.idea/contact-list.iml" />
     </modules>
   </component>
 </project>

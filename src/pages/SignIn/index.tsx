@@ -1,15 +1,16 @@
 import { useState } from "react";
-import Form from "../../components/Form/Form";
-import { InputsType } from "../../@types/IForm";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { setUser } from "../../redux/slices/authSlice";
-import { useAppDispatch } from "../../hooks/redux";
 import { useNavigate } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-const SignIn = () => {
-  const [error, setError] = useState<boolean>(false);
-  const dispatch = useAppDispatch();
+import { Form } from "../../components";
+import { InputsType } from "../../@types";
+import { useAppDispatch } from "../../hooks";
+import { setUser } from "../../redux/slices/authSlice";
+
+export const SignIn = () => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const [error, setError] = useState<string>("");
   const singIn = ({ email, password }: InputsType) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
@@ -20,10 +21,13 @@ const SignIn = () => {
             uid,
           })
         );
-        setError(false);
+        setError("");
         navigate("/home");
       })
-      .catch(() => setError(true));
+      .catch((error) => {
+        console.log(error.message);
+        setError(error.message);
+      });
   };
 
   return (
@@ -36,5 +40,3 @@ const SignIn = () => {
     />
   );
 };
-
-export default SignIn;

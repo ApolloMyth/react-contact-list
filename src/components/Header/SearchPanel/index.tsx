@@ -1,11 +1,12 @@
-import styles from "./SearchPanel.module.scss";
-import { Search, Close } from "@styled-icons/evil";
-import clsx from "clsx";
-import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
-import { setSearchLine } from "../../../redux/slices/contactsSlice";
 import { useEffect } from "react";
+import clsx from "clsx";
+import { Search, Close } from "@styled-icons/evaicons-solid";
 
-const SearchPanel = () => {
+import styles from "./SearchPanel.module.scss";
+import { useAppDispatch, useAppSelector } from "../../../hooks";
+import { setSearchLine } from "../../../redux/slices/contactsSlice";
+
+export const SearchPanel = () => {
   const dispatch = useAppDispatch();
   const { search } = useAppSelector((state) => state.contactsSlice);
   const onSetSearch = (e: string) => {
@@ -36,5 +37,3 @@ const SearchPanel = () => {
     </div>
   );
 };
-
-export default SearchPanel;
