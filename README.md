@@ -9,5 +9,4 @@
 <img src="https://img.shields.io/badge/SASS-323330.svg?style=for-the-badge&logo=SASS&logoColor=white" alt="sass">
 </div>  
 
-**Demo:** https://anysofronova.github.io/contact-list
 <div><img src="https://i.postimg.cc/cJ9cwVMK/2022-10-13-11-40-40.png" alt="demo"></div>  
